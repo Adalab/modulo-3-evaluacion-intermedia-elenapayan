@@ -1,14 +1,31 @@
 import React from 'react';
 import '../stylesheets/App.css';
 import PokeList from './PokeList';
+import Api from '../api/api.json';
+import Pokemon from './Pokemon';
 
-function App() {
-  return (
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      api: Api
+    };
+  }
 
-    <div>
-      <PokeList />
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        <PokeList>
+          {this.state.api.map((ap, key) => {
+            return <Pokemon
+              key={key}
+              pokemon={ap}
+            />
+          })}
+        </PokeList>
+      </div >
+    )
+  }
 }
 
 export default App;

@@ -1,17 +1,23 @@
 import React from 'react';
 
 
-
 function Pokemon(props) {
+    const types = props.pokemon.types;
     return (
         <li>
-            <img src={props.image} alt={props.name} />
-            <h2>{props.name}</h2>
-            <ul>Tipos:
-            <li>{props.types}</li>
+            <img src={props.pokemon.url} alt={props.pokemon.name} />
+            <h2>{props.pokemon.name}</h2>
+            <ul>{types.map((type, key) => {
+                return (
+                    <li key={key}>
+                        {type}
+                    </li>
+                )
+            }
+            )
+            }
             </ul>
         </li >
-
     );
 }
 

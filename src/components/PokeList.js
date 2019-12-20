@@ -1,26 +1,11 @@
 import React from 'react';
-import Pokemon from './Pokemon';
-import Api from '../api/api.json';
 
-function PokeList() {
+
+function PokeList(props) {
     return (
 
         <ul>
-            {(Api.map((api, key) => {
-                return (
-
-                    <Pokemon
-                        key={key}
-                        image={api.url}
-                        name={api.name}
-                        types={api.types.map(type => <li>{type}</li>)}
-                    />
-                )
-            }
-            )
-            )
-            }
-
+            {props.children}
         </ul>
     )
 }
