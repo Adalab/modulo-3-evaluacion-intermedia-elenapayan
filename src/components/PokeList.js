@@ -4,7 +4,7 @@ import React from 'react';
 function PokeList(props) {
     return (
 
-        <ul>
+        <ul className="pokemon-list">
             {props.children}
         </ul>
     )
