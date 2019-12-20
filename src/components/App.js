@@ -1,12 +1,13 @@
 import React from 'react';
 import '../stylesheets/App.css';
+import PokeList from './PokeList';
 
 function App() {
   return (
 
     <div>
-      Hola
-  </div>
+      <PokeList />
+    </div>
   );
 }
 
